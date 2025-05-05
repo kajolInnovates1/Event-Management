@@ -1,0 +1,65 @@
+import React from 'react';
+import { Link } from 'react-router';
+
+const UpcomingSingle = ({ single }) => {
+
+    const { id, thumbnail, name, category, date, location, entryFee, ratings, description, tags } = single;
+
+    // const event = {
+    //     id: "evt01",
+    //     thumbnail: "https://i.ibb.co.com/S74pk6Vn/img-1.jpg",
+    //     name: "Tech Innovators Meetup",
+    //     category: "Tech",
+    //     date: "2025-05-20",
+    //     location: "Dhaka, Bangladesh",
+    //     entryFee: "৳300",
+    //     ratings: 4.5,
+    //     description:
+    //         "A networking event for tech professionals to share ideas and discuss innovations in software and AI.",
+    //     tags: ["tech", "networking", "AI"],
+    // };
+
+    return (
+        <div>
+
+            <div className=" rounded-2xl shadow-md border p-4 hover:shadow-lg transition-all bg-white">
+                <img
+                    src={thumbnail}
+                    alt={name}
+                    className="w-full h-48 object-cover rounded-xl mb-4"
+                />
+                <div className="flex flex-col gap-1">
+                    <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
+                    <span className="text-sm text-blue-500 font-medium">{category}</span>
+                    <p className="text-sm text-gray-500 line-clamp-2">{description}</p>
+                    <div className="text-sm text-gray-600 mt-2">
+                        📍 <strong>Location:</strong> {location} <br />
+                        📅 <strong>Date:</strong> {date} <br />
+                        💳 <strong>Entry Fee:</strong> {entryFee} <br />
+                        ⭐ <strong>Rating:</strong> {ratings}
+                    </div>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                        {tags.map((tag, index) => (
+                            <span
+                                key={index}
+                                className="bg-gray-200 text-xs text-gray-700 px-2 py-1 rounded-full"
+                            >
+                                #{tag}
+                            </span>
+                        ))}
+                    </div>
+
+                    <Link to={`/details/${id}`}>
+                        <button className="mt-4 w-full bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
+                            View Details
+                        </button>
+                    </Link>
+                </div>
+            </div>
+
+
+        </div>
+    );
+};
+
+export default UpcomingSingle;

@@ -1,0 +1,402 @@
+[
+    {
+        "id": "evt_001",
+        "thumbnail": "https://i.ibb.co.com/S74pk6Vn/img-1.jpg",
+        "name": "Business Event 1",
+        "category": "Business",
+        "description": "This is a detailed description for business event number 1.",
+        "date": "2025-05-12",
+        "location": "Online (Zoom)",
+        "entryFee": "৳799",
+        "ratings": 4.4,
+        "organizer": "ArtNation",
+        "availableSeats": 73,
+        "isOnline": false,
+        "isUpcoming": true,
+        "tags": [
+            "Workshop",
+            "Coding",
+            "MERN"
+        ]
+    },
+    {
+        "id": "evt_002",
+        "thumbnail": "https://i.ibb.co.com/r2fPx5kR/img-2.jpg",
+        "name": "Sports Event 2",
+        "category": "Sports",
+        "description": "This is a detailed description for sports event number 2.",
+        "date": "2025-06-18",
+        "location": "Chittagong",
+        "entryFee": "Free",
+        "ratings": 3.7,
+        "organizer": "Code Academy",
+        "availableSeats": 179,
+        "isOnline": false,
+        "isUpcoming": false,
+        "tags": [
+            "Concert",
+            "Live",
+            "Band"
+        ]
+    },
+    {
+        "id": "evt_003",
+        "thumbnail": "https://i.ibb.co.com/gLCvm94M/img-4.jpg",
+        "name": "Art Event 3",
+        "category": "Art",
+        "description": "This is a detailed description for art event number 3.",
+        "date": "2025-06-29",
+        "location": "Online (Zoom)",
+        "entryFee": "৳426",
+        "ratings": 4.3,
+        "organizer": "Music Mania",
+        "availableSeats": 262,
+        "isOnline": true,
+        "isUpcoming": false,
+        "tags": [
+            "Concert",
+            "Live",
+            "Band"
+        ]
+    },
+    {
+        "id": "evt_004",
+        "thumbnail": "https://i.ibb.co.com/6R3S5Nt7/img-5.jpg",
+        "name": "Health Event 4",
+        "category": "Health",
+        "description": "This is a detailed description for health event number 4.",
+        "date": "2025-06-24",
+        "location": "Khulna",
+        "entryFee": "Free",
+        "ratings": 4.5,
+        "organizer": "BusinessHub",
+        "availableSeats": 171,
+        "isOnline": false,
+        "isUpcoming": true,
+        "tags": [
+            "Fitness",
+            "Health",
+            "Wellness"
+        ]
+    },
+    {
+        "id": "evt_005",
+        "thumbnail": "https://content3.jdmagicbox.com/comp/mysore/t6/0821px821.x821.220222153619.h6t6/catalogue/srk-event-management-vijaynagar-4th-stage-mysore-photographers-p1lg7qaaye.jpg",
+        "name": "Music Event 5",
+        "category": "Music",
+        "description": "This is a detailed description for music event number 5.",
+        "date": "2025-07-09",
+        "location": "Sylhet",
+        "entryFee": "৳451",
+        "ratings": 4.7,
+        "organizer": "Music Mania",
+        "availableSeats": 170,
+        "isOnline": false,
+        "isUpcoming": false,
+        "tags": [
+            "Concert",
+            "Live",
+            "Band"
+        ]
+    },
+    {
+        "id": "evt_006",
+        "thumbnail": "https://i.ibb.co.com/vC9chjFs/img-6.jpg",
+        "name": "Workshop Event 6",
+        "category": "Workshop",
+        "description": "This is a detailed description for workshop event number 6.",
+        "date": "2025-06-25",
+        "location": "Chittagong",
+        "entryFee": "৳261",
+        "ratings": 3.6,
+        "organizer": "FitLife",
+        "availableSeats": 121,
+        "isOnline": true,
+        "isUpcoming": false,
+        "tags": [
+            "Workshop",
+            "Coding",
+            "MERN"
+        ]
+    },
+    {
+        "id": "evt_007",
+        "thumbnail": "https://i.ibb.co.com/cKH5Zzr9/img-7.jpg",
+        "name": "Tech Event 7",
+        "category": "Tech",
+        "description": "This is a detailed description for tech event number 7.",
+        "date": "2025-06-28",
+        "location": "Sylhet",
+        "entryFee": "৳840",
+        "ratings": 3.5,
+        "organizer": "TechWorld Inc.",
+        "availableSeats": 188,
+        "isOnline": false,
+        "isUpcoming": true,
+        "tags": [
+            "AI",
+            "Networking",
+            "Innovation"
+        ]
+    },
+    {
+        "id": "evt_008",
+        "thumbnail": "https://i.ibb.co.com/9mhVpFns/img-8.jpg",
+        "name": "Music Event 8",
+        "category": "Music",
+        "description": "This is a detailed description for music event number 8.",
+        "date": "2025-06-27",
+        "location": "Rajshahi",
+        "entryFee": "Free",
+        "ratings": 3.6,
+        "organizer": "TechWorld Inc.",
+        "availableSeats": 295,
+        "isOnline": false,
+        "isUpcoming": false,
+        "tags": [
+            "Concert",
+            "Live",
+            "Band"
+        ]
+    },
+    {
+        "id": "evt_009",
+        "thumbnail": "https://i.ibb.co.com/VYz3DBKX/img-10.jpg",
+        "name": "Workshop Event 9",
+        "category": "Workshop",
+        "description": "This is a detailed description for workshop event number 9.",
+        "date": "2025-06-25",
+        "location": "Khulna",
+        "entryFee": "৳713",
+        "ratings": 4.3,
+        "organizer": "BusinessHub",
+        "availableSeats": 238,
+        "isOnline": false,
+        "isUpcoming": false,
+        "tags": [
+            "Workshop",
+            "Coding",
+            "MERN"
+        ]
+    },
+    {
+        "id": "evt_010",
+        "thumbnail": "https://i.ibb.co.com/S74pk6Vn/img-1.jpg",
+        "name": "Tech Event 10",
+        "category": "Tech",
+        "description": "This is a detailed description for tech event number 10.",
+        "date": "2025-06-13",
+        "location": "Rajshahi",
+        "entryFee": "৳1000",
+        "ratings": 4.3,
+        "organizer": "FitLife",
+        "availableSeats": 165,
+        "isOnline": false,
+        "isUpcoming": true,
+        "tags": [
+            "AI",
+            "Networking",
+            "Innovation"
+        ]
+    },
+    {
+        "id": "evt_011",
+        "thumbnail": "https://i.ibb.co.com/r2fPx5kR/img-2.jpg",
+        "name": "Art Event 11",
+        "category": "Art",
+        "description": "This is a detailed description for art event number 11.",
+        "date": "2025-06-17",
+        "location": "Online (Zoom)",
+        "entryFee": "Free",
+        "ratings": 4.9,
+        "organizer": "BusinessHub",
+        "availableSeats": 182,
+        "isOnline": true,
+        "isUpcoming": false,
+        "tags": [
+            "Painting",
+            "Culture",
+            "Gallery"
+        ]
+    },
+    {
+        "id": "evt_012",
+        "thumbnail": "https://i.ibb.co.com/gLCvm94M/img-4.jpg",
+        "name": "Tech Event 12",
+        "category": "Tech",
+        "description": "This is a detailed description for tech event number 12.",
+        "date": "2025-06-16",
+        "location": "Chittagong",
+        "entryFee": "৳193",
+        "ratings": 4.4,
+        "organizer": "BusinessHub",
+        "availableSeats": 208,
+        "isOnline": false,
+        "isUpcoming": true,
+        "tags": [
+            "AI",
+            "Networking",
+            "Innovation"
+        ]
+    },
+    {
+        "id": "evt_013",
+        "thumbnail": "https://i.ibb.co.com/6R3S5Nt7/img-5.jpg",
+        "name": "Workshop Event 13",
+        "category": "Workshop",
+        "description": "This is a detailed description for workshop event number 13.",
+        "date": "2025-06-30",
+        "location": "Rajshahi",
+        "entryFee": "৳227",
+        "ratings": 4.7,
+        "organizer": "Music Mania",
+        "availableSeats": 90,
+        "isOnline": false,
+        "isUpcoming": false,
+        "tags": [
+            "Workshop",
+            "Coding",
+            "MERN"
+        ]
+    },
+    {
+        "id": "evt_014",
+        "thumbnail": "https://i.ibb.co.com/vC9chjFs/img-6.jpg",
+        "name": "Art Event 14",
+        "category": "Art",
+        "description": "This is a detailed description for art event number 14.",
+        "date": "2025-06-11",
+        "location": "Sylhet",
+        "entryFee": "Free",
+        "ratings": 4.6,
+        "organizer": "BusinessHub",
+        "availableSeats": 209,
+        "isOnline": false,
+        "isUpcoming": true,
+        "tags": [
+            "Painting",
+            "Culture",
+            "Gallery"
+        ]
+    },
+    {
+        "id": "evt_015",
+        "thumbnail": "https://i.ibb.co.com/cKH5Zzr9/img-7.jpg",
+        "name": "Music Event 15",
+        "category": "Music",
+        "description": "This is a detailed description for music event number 15.",
+        "date": "2025-07-09",
+        "location": "Rajshahi",
+        "entryFee": "৳137",
+        "ratings": 4.5,
+        "organizer": "FitLife",
+        "availableSeats": 172,
+        "isOnline": true,
+        "isUpcoming": true,
+        "tags": [
+            "Concert",
+            "Live",
+            "Band"
+        ]
+    },
+    {
+        "id": "evt_016",
+        "thumbnail": "https://i.ibb.co.com/9mhVpFns/img-8.jpg",
+        "name": "Tech Event 16",
+        "category": "Tech",
+        "description": "This is a detailed description for tech event number 16.",
+        "date": "2025-07-09",
+        "location": "Chittagong",
+        "entryFee": "৳363",
+        "ratings": 3.6,
+        "organizer": "Music Mania",
+        "availableSeats": 295,
+        "isOnline": false,
+        "isUpcoming": true,
+        "tags": [
+            "AI",
+            "Networking",
+            "Innovation"
+        ]
+    },
+    {
+        "id": "evt_017",
+        "thumbnail": "https://i.ibb.co.com/fVxqsCn6/img-9.jpg",
+        "name": "Health Event 17",
+        "category": "Health",
+        "description": "This is a detailed description for health event number 17.",
+        "date": "2025-07-02",
+        "location": "Sylhet",
+        "entryFee": "৳126",
+        "ratings": 4.6,
+        "organizer": "Music Mania",
+        "availableSeats": 292,
+        "isOnline": true,
+        "isUpcoming": false,
+        "tags": [
+            "Fitness",
+            "Health",
+            "Wellness"
+        ]
+    },
+    {
+        "id": "evt_018",
+        "thumbnail": "https://i.ibb.co.com/VYz3DBKX/img-10.jpg",
+        "name": "Art Event 18",
+        "category": "Art",
+        "description": "This is a detailed description for art event number 18.",
+        "date": "2025-06-27",
+        "location": "Dhaka",
+        "entryFee": "৳787",
+        "ratings": 4.1,
+        "organizer": "BusinessHub",
+        "availableSeats": 82,
+        "isOnline": false,
+        "isUpcoming": true,
+        "tags": [
+            "Painting",
+            "Culture",
+            "Gallery"
+        ]
+    },
+    {
+        "id": "evt_019",
+        "thumbnail": "https://media.gettyimages.com/id/1340256496/photo/shot-of-a-young-woman-decorating-a-table-with-place-card-holders-in-preparation-for-a-wedding.jpg?s=612x612&w=gi&k=20&c=RfH7OiSpBl3CdwiIXcnA1tOUroDMDGMb6weVoNhwKkk=",
+        "name": "Sports Event 19",
+        "category": "Sports",
+        "description": "This is a detailed description for sports event number 19.",
+        "date": "2025-06-23",
+        "location": "Online (Zoom)",
+        "entryFee": "৳183",
+        "ratings": 4.1,
+        "organizer": "FitLife",
+        "availableSeats": 74,
+        "isOnline": true,
+        "isUpcoming": false,
+        "tags": [
+            "Fitness",
+            "Health",
+            "Wellness"
+        ]
+    },
+    {
+        "id": "evt_020",
+        "thumbnail": "https://content3.jdmagicbox.com/comp/mysore/t6/0821px821.x821.220222153619.h6t6/catalogue/srk-event-management-vijaynagar-4th-stage-mysore-photographers-p1lg7qaaye.jpg",
+        "name": "Tech Event 20",
+        "category": "Tech",
+        "description": "This is a detailed description for tech event number 20.",
+        "date": "2025-07-06",
+        "location": "Online (Zoom)",
+        "entryFee": "৳362",
+        "ratings": 4.5,
+        "organizer": "BusinessHub",
+        "availableSeats": 205,
+        "isOnline": true,
+        "isUpcoming": false,
+        "tags": [
+            "AI",
+            "Networking",
+            "Innovation"
+        ]
+    }
+]
