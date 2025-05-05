@@ -5,6 +5,7 @@ import {
 import Layouts from "../MainLayouts/Layouts";
 import Home from "../Pages/Home/Home";
 import Events from "../Components/Events/Events";
+import EventDetails from "../Pages/EventDetails/EventDetails";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
                 path: '/events',
                 Component: Events,
                 loader: () => fetch('/public/event.json'),
+            },
+            {
+                path: '/event-details/:id',
+                Component: EventDetails,
+                loader: () => fetch('/public/event.json')
             }
         ]
     },

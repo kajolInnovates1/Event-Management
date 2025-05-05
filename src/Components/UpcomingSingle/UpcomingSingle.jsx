@@ -5,19 +5,7 @@ const UpcomingSingle = ({ single }) => {
 
     const { id, thumbnail, name, category, date, location, entryFee, ratings, description, tags } = single;
 
-    // const event = {
-    //     id: "evt01",
-    //     thumbnail: "https://i.ibb.co.com/S74pk6Vn/img-1.jpg",
-    //     name: "Tech Innovators Meetup",
-    //     category: "Tech",
-    //     date: "2025-05-20",
-    //     location: "Dhaka, Bangladesh",
-    //     entryFee: "৳300",
-    //     ratings: 4.5,
-    //     description:
-    //         "A networking event for tech professionals to share ideas and discuss innovations in software and AI.",
-    //     tags: ["tech", "networking", "AI"],
-    // };
+
 
     return (
         <div>
@@ -49,7 +37,7 @@ const UpcomingSingle = ({ single }) => {
                         ))}
                     </div>
 
-                    <Link to={`/details/${id}`}>
+                    <Link to={`/event-details/${id}`}>
                         <button className="mt-4 w-full bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
                             View Details
                         </button>

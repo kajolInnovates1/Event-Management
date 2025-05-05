@@ -7,7 +7,7 @@ const Home = () => {
 
 
     const data = useLoaderData();
-    console.log(data);
+
 
 
 
