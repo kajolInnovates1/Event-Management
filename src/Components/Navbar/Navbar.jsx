@@ -3,19 +3,19 @@ import { NavLink } from 'react-router';
 
 const Navbar = () => {
     const Links = <>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/Events'>Events</NavLink>
-        <NavLink to='/'>My Events</NavLink>
-        <NavLink to='/'>Category</NavLink>
-        <NavLink to='/'>Registration</NavLink>
-        <NavLink to='/'>LogIn</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/'>Home</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/Events'>Events</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/myevents'>My Events</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/category'>Category</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/'>Registration</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/'>LogIn</NavLink>
 
 
 
     </>
     return (
         <div>
-            <div className="navbar bg-base- 100 shadow-sm">
+            <div className="navbar bg-base- 100 shadow-sm px-8">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

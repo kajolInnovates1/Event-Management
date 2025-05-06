@@ -2,7 +2,7 @@ import React from 'react';
 
 const Slider = () => {
     return (
-        <div className="min-h-[calc(100vh-540px)]">
+        <div className="min-h-[calc(100vh-540px)] px-8">
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img

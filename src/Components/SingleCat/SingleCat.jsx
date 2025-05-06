@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const UpcomingSingle = ({ single }) => {
-
-    const { id, thumbnail, name, category, date, location, entryFee, ratings, description, tags } = single;
-
-
+const SingleCat = ({ singlecat }) => {
+    const { id, thumbnail, name, category, date, location, entryFee, ratings, description, tags } = singlecat;
 
     return (
         <div>
@@ -16,11 +13,11 @@ const UpcomingSingle = ({ single }) => {
                     alt={name}
                     className="w-full h-48 object-cover rounded-xl mb-4"
                 />
-                <div className="flex flex-col gap-1 border-0">
-                    <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 ">{name}</h2>
-                    <span className="text-sm text-blue-500 font-medium justify-end">{category}</span>
+                <div className="flex flex-col gap-1">
+                    <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
+                    <span className="text-sm text-blue-500 font-medium">{category}</span>
                     <p className="text-sm text-gray-500 line-clamp-2">{description}</p>
-                    <div className="text-sm text-gray-600 mt-2 space-y-4">
+                    <div className="text-sm text-gray-600 mt-2">
                         📍 <strong>Location:</strong> {location} <br />
                         📅 <strong>Date:</strong> {date} <br />
                         💳 <strong>Entry Fee:</strong> {entryFee} <br />
@@ -37,6 +34,7 @@ const UpcomingSingle = ({ single }) => {
                         ))}
                     </div>
 
+
                     <Link to={`/event-details/${id}`}>
                         <button className="mt-4 w-full bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
                             View Details
@@ -46,8 +44,9 @@ const UpcomingSingle = ({ single }) => {
             </div>
 
 
+
         </div>
     );
 };
 
-export default UpcomingSingle;
+export default SingleCat;

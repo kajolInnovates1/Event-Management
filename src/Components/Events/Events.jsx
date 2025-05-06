@@ -24,8 +24,8 @@ const Events = () => {
     }, [data, showAll]);
 
     return (
-        <div>
-            <h1>All Events Here</h1>
+        <div className='my-12 px-8'>
+            <h1 className=' text-2xl lg:text-5xl text-center font-bold text-blue-600 pb-8'> All Events </h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                     display.map(single => <UpcomingSingle key={single.id} single={single}></UpcomingSingle>)

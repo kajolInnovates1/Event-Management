@@ -18,7 +18,10 @@ const Home = () => {
         <>
 
             <Slider></Slider>
-            <UpcomingEvent data={data}></UpcomingEvent>
+            <div className="px-8">
+                <UpcomingEvent data={data}></UpcomingEvent>
+            </div>
+
 
 
 

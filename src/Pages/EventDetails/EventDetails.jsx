@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { addMyEvents } from '../../Utility/Utility';
+
 
 const EventDetails = () => {
     const { id } = useParams();
@@ -7,7 +9,10 @@ const EventDetails = () => {
     const newdata = data.find(val => val.id === id);
     const { thumbnail, name, category, date, location, entryFee, ratings, description, tags } = newdata;
 
+    const handlebook = () => {
+        addMyEvents(newdata);
 
+    }
 
 
     return (
@@ -43,7 +48,7 @@ const EventDetails = () => {
                 )}
 
                 <div className="mt-6">
-                    <button className="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700 transition">
+                    <button onClick={handlebook} className="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700 transition">
                         Book Now
                     </button>
                 </div>
