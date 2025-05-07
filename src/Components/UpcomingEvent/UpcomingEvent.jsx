@@ -4,6 +4,13 @@ import UpcomingSingle from '../UpcomingSingle/UpcomingSingle';
 const UpcomingEvent = ({ data }) => {
     const [upComing, setUpComing] = useState([]);
     const [showAll, setShow] = useState(false);
+    if (showAll) {
+        window.scrollTo(0, 1500);
+    }
+    else {
+        window.scrollTo(0, 300);
+
+    }
 
     useEffect(() => {
         const filteredData = data.filter(item => item.isUpcoming === true);

@@ -8,7 +8,7 @@ const Layouts = () => {
     return (
         <div>
 
-            <header className='text-white back'>
+            <header className='bg-base-300'>
                 <Navbar></Navbar>
 
             </header>

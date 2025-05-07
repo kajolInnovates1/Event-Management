@@ -1,22 +1,32 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import { useLoaderData, useNavigate, useParams } from 'react-router';
 import { addMyEvents } from '../../Utility/Utility';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const EventDetails = () => {
+    const navigate = useNavigate();
     const { id } = useParams();
     const data = useLoaderData();
     const newdata = data.find(val => val.id === id);
     const { thumbnail, name, category, date, location, entryFee, ratings, description, tags } = newdata;
 
     const handlebook = () => {
+
         addMyEvents(newdata);
+
+
+        navigate('/myevents');
+        toast.success('Booking Succesfull');
+
+
 
     }
 
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 bg-white shadow-lg rounded-2xl">
+            <Toaster></Toaster>
             <img
                 src={thumbnail}
                 alt={name}

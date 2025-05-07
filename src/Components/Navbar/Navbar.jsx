@@ -5,17 +5,18 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navbar = () => {
     const { user, logout } = use(AuthContext);
+    console.log(user);
     const Links = <>
-        <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/'>Home</NavLink>
-        <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/Events'>Events</NavLink>
-        <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/category'>Category</NavLink>
+        <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 hover:rounded-2xl hover:py-2 `} to='/'>Home</NavLink>
+        <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 hover:rounded-2xl hover:py-2 `} to='/Events'>Events</NavLink>
+        <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 hover:rounded-2xl hover:py-2 `} to='/category'>Category</NavLink>
         {
             user ? (
-                <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/myevents'>My Events</NavLink>
+                <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 hover:rounded-2xl hover:py-2 `} to='/myevents'>My Events</NavLink>
             ) : ' '}
         {
             user ? ' ' : (
-                <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/register'>Registration</NavLink>)
+                <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 hover:rounded-2xl hover:py-2 `} to='/register'>Registration</NavLink>)
         }
 
 
@@ -35,8 +36,9 @@ const Navbar = () => {
 
     }
     return (
+
         <div className=' '>
-            <div className="navbar bg-base- 100 shadow-sm px-8">
+            <div className="navbar  shadow-sm px-8">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,26 +46,36 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-8 font-bold ">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             {
                                 Links
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+
+                    <a className="btn btn-ghost text-xl flex "><span className='text-2xl text-blue-600'>E</span><span>vents</span> </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-12 font-bold text-2xl">
                         {
                             Links
                         }
-
                     </ul>
                 </div>
-                <div className="navbar-end">
+
+                <div className="navbar-end gap-3">
+
+                    <div className='tooltip tooltip-bottom' data-tip={user?.displayName}>
+                        {
+                            user && (user.photoURL ? (<img className='w-12 h-12 rounded-full ' src={user.photoURL} />
+                            ) : (<img className='w-12 h-12 rounded-full ' src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
+                            ))
+                        }
+
+                    </div>
                     {
                         user ? (<button onClick={handleLogout} className='bg-blue-600 px-4 py-1 text-white rounded-sm'>Log Out</button>
-                        ) : (<NavLink className='bg-blue-600 px-4 py-1 text-white rounded-sm' to='/login'>Log In</NavLink>
+                        ) : (<NavLink className='bg-blue-600 px-4 py-1 text-white rounded-sm  hover:bg-blue-600 hover:px-8 hover:duration-1000 hover:rounded-2xl hover:py-2 ' to='/login'>Log In</NavLink>
                         )
                     }
                 </div>
@@ -73,3 +85,17 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

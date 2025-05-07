@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 const getMyEvents = () => {
     const event = localStorage.getItem('favourite');
     if (event) {
@@ -19,6 +21,16 @@ const setEvent = (newfavourite) => {
 
 
 
+
+}
+
+const removeitem = (singleEvent) => {
+    const all = getMyEvents();
+    const filterall = all.filter(a => a.id !== singleEvent.id);
+    console.log('remove js file');
+    setEvent(filterall);
+    toast.success("Remove item Succesfully");
+
 }
 
 
@@ -27,12 +39,14 @@ const addMyEvents = (data) => {
     const favourite = getMyEvents();
     const findData = favourite.find(da => da.id === data.id);
     if (findData) {
-        alert('Event Allready Added');
+
+        toast.error("Event Allready Added");
     }
     else {
         const newfavourite = [...favourite, data];
         setEvent(newfavourite);
+
     }
 
 }
-export { addMyEvents, getMyEvents };
+export { addMyEvents, getMyEvents, removeitem };

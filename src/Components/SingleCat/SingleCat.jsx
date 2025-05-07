@@ -7,7 +7,7 @@ const SingleCat = ({ singlecat }) => {
     return (
         <div>
 
-            <div className=" rounded-2xl shadow-md border p-4 hover:shadow-lg transition-all bg-white">
+            <div className=" rounded-2xl shadow-md border p-4 hover:shadow-lg transition-all border-0 bg-white">
                 <img
                     src={thumbnail}
                     alt={name}
