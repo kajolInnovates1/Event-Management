@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
 
+
 const Navbar = () => {
     const { user, logout } = use(AuthContext);
     const Links = <>
@@ -34,7 +35,7 @@ const Navbar = () => {
 
     }
     return (
-        <div>
+        <div className=' '>
             <div className="navbar bg-base- 100 shadow-sm px-8">
                 <div className="navbar-start">
                     <div className="dropdown">

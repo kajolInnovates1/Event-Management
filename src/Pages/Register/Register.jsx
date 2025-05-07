@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router';
 
 const Register = () => {
     const navigate = useNavigate();
-    const { createUser, setUser, emailverify } = useContext(AuthContext);
+    const { createUser, setUser, emailverify, updatepro } = useContext(AuthContext);
     const [password, setPassword] = useState('');
     const [wrongMessage, setWrongMessage] = useState('');
 
@@ -34,6 +34,12 @@ const Register = () => {
         const url = e.target.url.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+        const Profile = {
+            displayName: name,
+            photoURL: url
+
+
+        };
 
         const validationMsg = validatePassword(password);
         if (validationMsg) {
@@ -50,7 +56,15 @@ const Register = () => {
                     alert('SignUp Succesfull');
                     setCheck(true);
 
-                })
+                }).catch(error => {
+                    alert(error);
+                });
+
+                updatepro(profile).then(result => {
+                    alert('update Profile Succesfull');
+                }).catch(error => {
+                    alert(error);
+                });
 
 
             })
