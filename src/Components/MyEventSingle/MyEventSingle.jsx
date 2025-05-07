@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MyEventSingle = ({ singleEvent }) => {
-    const { thumbnail, name, category, date, location, entryFee, ratings, description, tags } = singleEvent;
+    const { thumbnail, name, category, date, location, entryFee, description } = singleEvent;
 
     return (
         <div>

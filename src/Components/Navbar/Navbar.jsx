@@ -1,18 +1,38 @@
-import React from 'react';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navbar = () => {
+    const { user, logout } = use(AuthContext);
     const Links = <>
         <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/'>Home</NavLink>
         <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/Events'>Events</NavLink>
-        <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/myevents'>My Events</NavLink>
         <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/category'>Category</NavLink>
-        <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/'>Registration</NavLink>
-        <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/'>LogIn</NavLink>
+        {
+            user ? (
+                <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/myevents'>My Events</NavLink>
+            ) : ' '}
+        {
+            user ? ' ' : (
+                <NavLink className={({ isActive }) => isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-sm' : ' '} to='/register'>Registration</NavLink>)
+        }
 
 
 
     </>
+
+
+
+    const handleLogout = () => {
+
+        logout().then(result => {
+            alert('LogOut User')
+        })
+            .catch(error => {
+                console.log(error);
+            })
+
+    }
     return (
         <div>
             <div className="navbar bg-base- 100 shadow-sm px-8">
@@ -40,7 +60,11 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    {
+                        user ? (<button onClick={handleLogout} className='bg-blue-600 px-4 py-1 text-white rounded-sm'>Log Out</button>
+                        ) : (<NavLink className='bg-blue-600 px-4 py-1 text-white rounded-sm' to='/login'>Log In</NavLink>
+                        )
+                    }
                 </div>
             </div>
         </div>
