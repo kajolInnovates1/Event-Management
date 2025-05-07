@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router';
 
 const Register = () => {
     const navigate = useNavigate();
-    const { createUser, setUser } = useContext(AuthContext);
+    const { createUser, setUser, emailverify } = useContext(AuthContext);
     const [password, setPassword] = useState('');
     const [wrongMessage, setWrongMessage] = useState('');
 
@@ -44,9 +44,15 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                setUser(user);
-                alert('SignUp Succesfull');
-                navigate('/');
+
+                emailverify().then(() => {
+                    alert('Send Email verification Please cheack Email');
+                    alert('SignUp Succesfull');
+                    setCheck(true);
+
+                })
+
+
             })
             .catch(error => {
                 setWrongMessage(error.message);

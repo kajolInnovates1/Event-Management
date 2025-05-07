@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Link, useNavigate } from 'react-router';
 
 const Login = () => {
-    const { signInUser, setUser } = useContext(AuthContext);
+    const { signInUser, setUser, resetPass } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const [password, setPassword] = useState('');
@@ -40,15 +40,35 @@ const Login = () => {
             return;
         }
 
-        try {
-            const result = await signInUser(email, password);
-            setUser(result.user);
-            navigate('/');
-        } catch (error) {
-            setWrongMessage('Invalid email or password');
-            console.error(error);
-        }
+        signInUser(email, password).then(result => {
+            if (!result.user.emailVerified) {
+                alert('please Verified Email');
+            }
+            else {
+                setUser(result.user);
+                navigate('/');
+
+            }
+
+
+        })
+            .catch(error => {
+                alert(error);
+            })
+
+
     };
+    const emailref = useRef();
+
+    const handleForgetpassword = () => {
+        const email = emailref.current.value;
+        resetPass(email).then(() => {
+            alert('A password Reset Email is Sent! please Check Email');
+        }).catch(error => {
+            alert(error);
+        })
+
+    }
 
     return (
         <div className='flex justify-center items-center min-h-screen'>
@@ -57,7 +77,7 @@ const Login = () => {
                 <div className="card-body">
                     <form onSubmit={handleSubmit} className="space-y-2">
                         <label className="label font-bold">Email</label>
-                        <input type="email" name='email' className="input" placeholder="Email" required />
+                        <input type="email" name='email' ref={emailref} className="input" placeholder="Email" required />
 
                         <label className="label font-bold">Password</label>
                         <input
@@ -74,7 +94,7 @@ const Login = () => {
                         />
 
                         <div>
-                            <a className="link link-hover font-bold">Forgot password?</a>
+                            <a onClick={handleForgetpassword} className="link link-hover font-bold">Forgot password?</a>
                         </div>
 
                         {wrongMessage && <p className='text-red-500 font-bold'>{wrongMessage}</p>}
