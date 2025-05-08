@@ -37,7 +37,7 @@ const Navbar = () => {
     }
     return (
 
-        <div className=''>
+        <div className='bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600'>
             <div className="navbar  shadow-sm px-8">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -53,7 +53,7 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                    <a className="btn btn-ghost text-xl flex "><span className='text-5xl text-blue-600'>E</span><span className='text-2xl font-bold'>vents</span> </a>
+                    <a className="btn btn-ghost text-xl flex "><span className='text-5xl text-white'>E</span><span className='text-2xl font-bold'>vents</span> </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-12 font-bold text-2xl">

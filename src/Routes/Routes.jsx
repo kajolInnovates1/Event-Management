@@ -11,11 +11,15 @@ import Category from "../Components/Category/Category";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import Erorr from "../Components/Erorr/Erorr";
+import Terms from "../Components/Terms/Terms";
+import PrivacyPolicy from "../Components/PrivacyPolicy/PrivacyPolicy";
 
 const router = createBrowserRouter([
     {
         path: "/",
         Component: Layouts,
+        errorElement: <Erorr></Erorr>,
         children: [
             {
                 index: true,
@@ -51,6 +55,14 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 Component: Register
+            },
+            {
+                path: '/terms',
+                Component: Terms
+            },
+            {
+                path: '/policy',
+                Component: PrivacyPolicy
             }
         ]
     },
