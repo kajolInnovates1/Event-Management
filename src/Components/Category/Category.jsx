@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import SingleCat from '../SingleCat/SingleCat';
 
@@ -37,11 +37,13 @@ const Category = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-120 gap-5'>
 
-                {
-                    categorydata && categorydata.map(singlecat => <SingleCat key={singlecat.id} singlecat={singlecat}></SingleCat>)
+                <Suspense fallback={<span className="loading loading-spinner text-success"></span>}>
+                    {
+                        categorydata && categorydata.map(singlecat => <SingleCat key={singlecat.id} singlecat={singlecat}></SingleCat>)
 
 
-                }
+                    }
+                </Suspense>
             </div>
 
 

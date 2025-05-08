@@ -1,11 +1,12 @@
 import React, { use } from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
+import toast from 'react-hot-toast';
 
 
 const Navbar = () => {
     const { user, logout } = use(AuthContext);
-    console.log(user);
+
     const Links = <>
         <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 rounded-2xl hover:py-2 hover:text-white `} to='/' >Home</NavLink>
         <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 rounded-2xl hover:py-2  hover:text-white`} to='/Events' >Events</NavLink>
@@ -18,20 +19,28 @@ const Navbar = () => {
             user ? ' ' : (
                 <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 rounded-2xl hover:py-2 hover:text-white `} to='/register'>Registration</NavLink>)
         }
+        {
+            user ? (
+                <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 rounded-2xl hover:py-2  hover:text-white`} to='/myprofile'>My Profile</NavLink>
+            ) : ' '}
+
 
 
 
     </>
 
 
-
+    const navigate = useNavigate();
     const handleLogout = () => {
 
         logout().then(result => {
-            alert('LogOut User')
+            toast.success('Log out Succesfull');
+            navigate('/login')
+
         })
             .catch(error => {
-                console.log(error);
+
+
             })
 
     }

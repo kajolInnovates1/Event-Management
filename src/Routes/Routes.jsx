@@ -14,6 +14,7 @@ import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import Erorr from "../Components/Erorr/Erorr";
 import Terms from "../Components/Terms/Terms";
 import PrivacyPolicy from "../Components/PrivacyPolicy/PrivacyPolicy";
+import MyProfile from "../Components/MyProfile/MyProfile";
 
 const router = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
             {
                 path: '/policy',
                 Component: PrivacyPolicy
+            },
+            {
+                path: '/myprofile',
+                Component: MyProfile
             }
         ]
     },

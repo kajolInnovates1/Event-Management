@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../Firebase/Firebase.config';
-import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
 import { GoogleAuthProvider, sendPasswordResetEmail } from 'firebase/auth/web-extension';
 export const AuthContext = createContext();
 
@@ -8,6 +8,8 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
+    console.log(user);
+    const [loading, setLoading] = useState(true);
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
 
@@ -19,9 +21,7 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
-    const emailverify = () => {
-        return sendEmailVerification(auth.currentUser);
-    }
+
     const resetPass = (email) => {
         return sendPasswordResetEmail(auth, email);
     }
@@ -35,6 +35,7 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
 
             setUser(currentUser);
+            setLoading(false);
         })
         return () => {
             unSubscribe();
@@ -49,9 +50,11 @@ const AuthProvider = ({ children }) => {
         createUser,
         signInUser,
         logout,
-        emailverify,
+
         resetPass,
         updatepro,
+        loading,
+        setLoading
 
 
     }

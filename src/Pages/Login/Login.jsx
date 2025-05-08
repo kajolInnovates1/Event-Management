@@ -39,6 +39,7 @@ const Login = () => {
 
         signInWithPopup(auth, provider).then(result => {
             toast.success('sign In Succesfull');
+            navigate('/');
         }).catch(error => {
             console.log(error);
         })
@@ -58,17 +59,9 @@ const Login = () => {
         }
 
         signInUser(email, password).then(result => {
-            if (!result.user.emailVerified) {
-
-                toast.success('please Verified Email');
-            }
-            else {
-                setUser(result.user);
-                navigate('/');
-                toast.success('LogIn succesfull');
-
-            }
-
+            setUser(result.user);
+            navigate('/');
+            toast.success('LogIn succesfull');
 
         })
             .catch(error => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import UpcomingSingle from '../UpcomingSingle/UpcomingSingle';
 
 const UpcomingEvent = ({ data }) => {
@@ -31,9 +31,13 @@ const UpcomingEvent = ({ data }) => {
         <div className='my-12'>
             <h1 className=' text-2xl lg:text-5xl text-center font-bold text-blue-600 pb-8' data-aos='flip-left'>Upcoming Events</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-                {
-                    upComing.map(single => <UpcomingSingle key={single.id} single={single}></UpcomingSingle>)
-                }
+                <Suspense fallback={<span className="loading loading-spinner text-success"></span>}>
+                    {
+                        upComing.map(single => <UpcomingSingle key={single.id} single={single}></UpcomingSingle>)
+                    }
+
+                </Suspense>
+
 
 
             </div>

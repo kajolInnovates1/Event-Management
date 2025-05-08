@@ -8,7 +8,7 @@ import { auth } from '../../Firebase/Firebase.config';
 
 const Register = () => {
 
-    const { createUser, emailverify, updatepro } = useContext(AuthContext);
+    const { createUser, updatepro, setUser } = useContext(AuthContext);
     const [password, setPassword] = useState('');
     const [wrongMessage, setWrongMessage] = useState('');
 
@@ -36,6 +36,7 @@ const Register = () => {
 
         signInWithPopup(auth, provider).then(result => {
             toast.success('sign In Succesfull');
+            navigate('/');
         }).catch(error => {
             console.log(error);
         })
@@ -71,24 +72,20 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
+                const user = result.user;
 
 
-                emailverify().then(() => {
-
-                    toast.success('Send Email verification Please cheack Email');
-
-
-
-                }).catch(error => {
-                    toast(error.message)
-                });
 
 
 
                 updatepro(profile).then(result => {
 
+
+                    setUser(...user, profile);
+
                 }).catch(error => {
                     toast.error(error.message);
+                    setUser(user);
                 });
 
 
