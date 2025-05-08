@@ -1,14 +1,15 @@
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState, useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Link, useNavigate } from 'react-router';
 
 import toast, { Toaster } from 'react-hot-toast';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../../Firebase/Firebase.config';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
 
-    const { signInUser, setUser, resetPass } = useContext(AuthContext);
+    const { signInUser, setUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const [password, setPassword] = useState('');
@@ -41,7 +42,7 @@ const Login = () => {
             toast.success('sign In Succesfull');
             navigate('/');
         }).catch(error => {
-            console.log(error);
+            // console.log(error);
         })
 
     }
@@ -70,21 +71,16 @@ const Login = () => {
 
 
     };
-    const emailref = useRef();
 
     const handleForgetpassword = () => {
-        const email = emailref.current.value;
-        resetPass(email).then(() => {
-
-            toast.success('A password Reset Email is Sent! please Check Email');
-        }).catch(error => {
-            toast.error(error.message);
-
-        })
+        navigate('/resetpass');
     }
 
     return (
         <div className='flex justify-center items-center min-h-screen'>
+            <Helmet>
+                <title>Event Login</title>
+            </Helmet>
             <Toaster></Toaster>
 
             <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
@@ -92,7 +88,7 @@ const Login = () => {
                 <div className="card-body">
                     <form onSubmit={handleSubmit} className="space-y-2">
                         <label className="label font-bold">Email</label>
-                        <input type="email" name='email' ref={emailref} className="input" placeholder="Email" required />
+                        <input type="email" name='email' className="input" placeholder="Email" required />
 
                         <label className="label font-bold">Password</label>
                         <input

@@ -1,18 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Sponsor = () => {
     return (
         <div>
+
             <div className="px-8 mt-12 mb-12 " data-aos='slide-down'>
                 <div className="shadow-2xl p-8 text-center space-y-4 rounded-sm mb-4">
                     <h1 className="text-2xl font-bold text-blue-600">SPONSORS</h1>
                     <h1 className="font-bold text-xl text-blue-600">THANKS TO SPONSORS HERE!</h1>
                 </div>
-
-
-
-
-
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-8 gap-5">
 

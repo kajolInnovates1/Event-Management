@@ -1,12 +1,14 @@
 import React from 'react';
 import { GiGreenhouse } from "react-icons/gi";
 import { FaExpand, FaFlagCheckered, FaRegHandshake } from "react-icons/fa";
+import { Helmet } from 'react-helmet-async';
 
 
 const Service = () => {
     return (
         <div>
             <div className="px-8 mt-12 mb-12 ">
+
                 <div className="shadow-2xl p-8 text-center space-y-4 rounded-sm mb-4" data-aos='slide-left'>
                     <h1 className="text-2xl font-bold text-blue-600">WHAT IS THE INTERNATIONAL CONFERENCE 2025 </h1>
                     <h1 className="font-bold text-xl text-blue-600">BIGGEST BUSINESS EVENT</h1>

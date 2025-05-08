@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const MyProfile = () => {
     const { updatepro, setUser, user } = useContext(AuthContext);
@@ -26,11 +27,14 @@ const MyProfile = () => {
     };
 
     return (
-        <div>
+        <div className='mb-12 px-8'>
+            <Helmet>
+                <title>My Profile</title>
+            </Helmet>
             <div className='flex flex-col justify-center items-center mt-12 space-y-4 mb-5'>
                 <h1 className='font-bold text-4xl'>Name: {user?.displayName}</h1>
                 <h3 className='font-bold text-3xl'>Email: {user?.email}</h3>
-                <p className='font-bold text-2xl'>photoURL: {user?.photoURL}</p>
+                <p className='font-bold '>photoURL: {user?.photoURL}</p>
                 <img src={user?.photoURL} alt={user?.photoURL}></img>
             </div>
 
@@ -42,6 +46,7 @@ const MyProfile = () => {
                     <input
                         type="text"
                         name="name"
+                        placeholder='Name'
                         defaultValue={user?.displayName}
                         className="w-full p-2 border border-gray-300 rounded mb-4"
                         required
@@ -51,6 +56,7 @@ const MyProfile = () => {
                     <input
                         type="email"
                         name="email"
+                        placeholder='Email'
                         defaultValue={user?.email}
                         className="w-full p-2 border border-gray-300 rounded mb-4"
                         required
@@ -60,6 +66,7 @@ const MyProfile = () => {
                     <input
                         type="url"
                         name="url"
+                        placeholder='URL'
                         defaultValue={user?.photoURL}
                         className="w-full p-2 border border-gray-300 rounded mb-4"
                         required

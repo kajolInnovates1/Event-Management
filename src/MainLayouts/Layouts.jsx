@@ -1,10 +1,11 @@
 import React from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Navbar from '../Components/Navbar/Navbar';
 import Footer from '../Components/Footer/Footer';
 import './Layouts.css'
 
 const Layouts = () => {
+    const { state } = useNavigation();
     return (
         <div>
 
@@ -13,7 +14,11 @@ const Layouts = () => {
 
             </header>
             <main className=''>
-                <Outlet></Outlet>
+                {
+                    state == 'loading' ? (<span className="loading loading-spinner loading-xl"></span>
+                    ) : (<Outlet></Outlet>)
+                }
+
 
             </main>
             <footer>

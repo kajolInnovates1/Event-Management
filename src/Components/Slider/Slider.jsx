@@ -1,8 +1,10 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Slider = () => {
     return (
         <div className="min-h-[calc(100vh-540px)] px-8">
+
             <div className="carousel w-full" data-aos='fade-down'>
                 <div id="slide1" className="carousel-item relative w-full">
                     <img

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const Footer = () => {
     const { user } = useContext(AuthContext);
@@ -25,6 +26,7 @@ const Footer = () => {
 
     return (
         <footer className="bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 text-white py-10 px-6 h-[800px] font-bold text-2xl space-y-4 md:pt-[300px]">
+
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
                 {/* Services */}
                 <div>

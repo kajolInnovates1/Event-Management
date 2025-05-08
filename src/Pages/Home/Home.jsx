@@ -6,6 +6,7 @@ import Service from "../../Components/Service/Service";
 import Sponsor from "../../Components/Sponsor/Sponsor";
 import './Home.css'
 import { Toaster } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
 
@@ -21,6 +22,9 @@ const Home = () => {
 
         <>
             <div className="bg-base-300">
+                <Helmet>
+                    <title>Event Management</title>
+                </Helmet>
                 <Toaster></Toaster>
 
                 <div className="pt-48">

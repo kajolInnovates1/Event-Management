@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router';
 
 const SingleCat = ({ singlecat }) => {
@@ -6,6 +7,7 @@ const SingleCat = ({ singlecat }) => {
 
     return (
         <div>
+
 
             <div className=" rounded-2xl shadow-md  p-4 hover:shadow-lg transition-all border-0 bg-white" data-aos='zoom-out'>
                 <img

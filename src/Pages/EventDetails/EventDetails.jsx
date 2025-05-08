@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLoaderData, useNavigate, useParams } from 'react-router';
 import { addMyEvents } from '../../Utility/Utility';
 import toast, { Toaster } from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const EventDetails = () => {
     const navigate = useNavigate();
@@ -14,7 +15,7 @@ const EventDetails = () => {
     const [email, setEmail] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const handlebook = (e) => {
+    const handlebook = async (e) => {
         e.preventDefault();
         setLoading(true);
 
@@ -23,17 +24,23 @@ const EventDetails = () => {
             email: email
         };
 
-        // Simulate delay
-        setTimeout(() => {
-            addMyEvents(newdata);
+        try {
+            // Simulate API call or add your real API function here
+            await addMyEvents(newdata);
             toast.success('Booking Successful');
             navigate('/myevents');
+        } catch (error) {
+            toast.error('Something went wrong');
+        } finally {
             setLoading(false);
-        }, 1200);
+        }
     };
 
     return (
         <div className="max-w-4xl mx-auto px-4 my-12 bg-white shadow-lg rounded-2xl">
+            <Helmet>
+                <title>Event Details</title>
+            </Helmet>
             <Toaster />
             <img
                 src={thumbnail}
@@ -66,7 +73,6 @@ const EventDetails = () => {
 
                 <div className="mt-6">
                     <form onSubmit={handlebook}>
-
                         <label className="input validator">
                             <input
                                 type="text"

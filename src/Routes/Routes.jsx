@@ -15,6 +15,7 @@ import Erorr from "../Components/Erorr/Erorr";
 import Terms from "../Components/Terms/Terms";
 import PrivacyPolicy from "../Components/PrivacyPolicy/PrivacyPolicy";
 import MyProfile from "../Components/MyProfile/MyProfile";
+import ResetPassword from "../Pages/ResetPassword/ResetPassword";
 
 const router = createBrowserRouter([
     {
@@ -25,19 +26,21 @@ const router = createBrowserRouter([
             {
                 index: true,
                 Component: Home,
-                loader: () => fetch('/public/event.json'),
-                hydrateFallbackElement: <p>Loading.........</p>
+                loader: () => fetch('/event.json'),
+                hydrateFallbackElement: <span className="loading loading-spinner loading-xl"></span>
+
 
             },
             {
                 path: '/events',
                 Component: Events,
-                loader: () => fetch('/public/event.json'),
+                loader: () => fetch('/event.json'),
             },
             {
                 path: '/event-details/:id',
-                loader: () => fetch('/public/event.json'),
-                element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>
+                loader: () => fetch('/event.json'),
+                element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
+                hydrateFallbackElement: <span className="loading loading-spinner loading-xl"></span>
 
             },
             {
@@ -47,7 +50,9 @@ const router = createBrowserRouter([
             {
                 path: '/category',
                 Component: Category,
-                loader: () => fetch('/public/event.json'),
+                loader: () => fetch('/event.json'),
+                hydrateFallbackElement: <span className="loading loading-spinner loading-xl"></span>
+
             },
             {
                 path: '/login',
@@ -68,6 +73,10 @@ const router = createBrowserRouter([
             {
                 path: '/myprofile',
                 Component: MyProfile
+            },
+            {
+                path: '/resetpass',
+                Component: ResetPassword
             }
         ]
     },

@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
 
 import UpcomingSingle from '../UpcomingSingle/UpcomingSingle';
+import { Helmet } from 'react-helmet-async';
 
 const Events = () => {
     const data = useLoaderData();
@@ -25,6 +26,9 @@ const Events = () => {
 
     return (
         <div className='my-12 px-8 pt-12'>
+            <Helmet>
+                <title>All Events</title>
+            </Helmet>
             <h1 className=' text-2xl lg:text-5xl text-center font-bold text-blue-600 pb-8'> All Events </h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 <Suspense fallback={<span className="loading loading-spinner text-success"></span>}>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
 
 const MyEventSingle = ({ singleEvent, onRemove }) => {
@@ -9,6 +10,7 @@ const MyEventSingle = ({ singleEvent, onRemove }) => {
 
     return (
         <div>
+
 
             <div className="card lg:card-side bg-base-100 shadow-sm">
                 <Toaster></Toaster>

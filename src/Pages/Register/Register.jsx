@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router';
 import toast, { Toaster } from 'react-hot-toast';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../../Firebase/Firebase.config';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
 
@@ -38,7 +39,7 @@ const Register = () => {
             toast.success('sign In Succesfull');
             navigate('/');
         }).catch(error => {
-            console.log(error);
+            // console.log(error);
         })
 
     }
@@ -103,6 +104,9 @@ const Register = () => {
 
     return (
         <div className='flex justify-center items-center min-h-screen'>
+            <Helmet>
+                <title>Event Register</title>
+            </Helmet>
             <Toaster></Toaster>
             <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
                 <h1 className='font-bold text-3xl text-center p-4 text-blue-600'>Registration Form</h1>

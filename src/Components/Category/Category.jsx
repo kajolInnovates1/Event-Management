@@ -1,6 +1,7 @@
 import React, { Suspense, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import SingleCat from '../SingleCat/SingleCat';
+import { Helmet } from 'react-helmet-async';
 
 
 const Category = () => {
@@ -10,18 +11,25 @@ const Category = () => {
 
 
     const handleSubmit = (text) => {
-        console.log(text);
-        const filtercate = data.filter(cat => cat.category.toLowerCase().trim() === text.toLowerCase().trim());
-        setCategoryData(filtercate);
+        // console.log(text);
+        if (Array.isArray(data)) {
+            const filtercate = data.filter(cat => cat.category.toLowerCase().trim() === text.toLowerCase().trim());
+            setCategoryData(filtercate);
+            // Proceed normally
+        }
+
 
 
     }
 
     return (
         <div className='mt-10 mb-120 px-8'>
+            <Helmet>
+                <title>Event Category</title>
+            </Helmet>
             <div className="dropdown dropdown-hover">
                 <div className='flex justify-center text-center  mb-10 ml-170'>
-                    <div tabIndex={0} role="button" className=" w-[100px] btn  p-8 bg-blue-600 text-white ">Category</div>
+                    <div tabIndex={0} role="button" className=" w-[100px] btn  p-8 bg-blue-600 text-white tooltip" data-tip="Please Click any category and scroll up">Category</div>
 
                 </div>
                 <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 ml-170 w-52 p-2 shadow-sm">

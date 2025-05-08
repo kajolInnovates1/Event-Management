@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router';
 
 const UpcomingSingle = ({ single }) => {
@@ -9,6 +10,7 @@ const UpcomingSingle = ({ single }) => {
 
     return (
         <div>
+
 
             <div className=" rounded-2xl shadow-md border-0 p-4 hover:shadow-lg transition-all bg-white" data-aos='zoom-in'>
                 <img
