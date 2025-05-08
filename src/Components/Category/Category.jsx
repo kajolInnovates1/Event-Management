@@ -28,7 +28,7 @@ const Category = () => {
                 <title>Event Category</title>
             </Helmet>
             <div className="dropdown dropdown-hover">
-                <div className='flex justify-center text-center  mb-10 ml-170'>
+                <div className='flex justify-center text-center  mb-10 md:ml-170'>
                     <div tabIndex={0} role="button" className=" w-[100px] btn  p-8 bg-blue-600 text-white tooltip" data-tip="Please Click any category and scroll up">Category</div>
 
                 </div>
