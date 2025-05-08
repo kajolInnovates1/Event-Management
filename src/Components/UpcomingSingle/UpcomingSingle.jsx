@@ -10,7 +10,7 @@ const UpcomingSingle = ({ single }) => {
     return (
         <div>
 
-            <div className=" rounded-2xl shadow-md border p-4 hover:shadow-lg transition-all bg-white">
+            <div className=" rounded-2xl shadow-md border-0 p-4 hover:shadow-lg transition-all bg-white" data-aos='zoom-in'>
                 <img
                     src={thumbnail}
                     alt={name}
@@ -38,7 +38,7 @@ const UpcomingSingle = ({ single }) => {
                     </div>
 
                     <Link to={`/event-details/${id}`}>
-                        <button className="mt-4 w-full bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
+                        <button className="mt-4 w-full  text-blue-600 px-4 py-2 rounded-xl hover:bg-blue-700 border border-blue-600  hover:text-white">
                             View Details
                         </button>
                     </Link>

@@ -25,21 +25,21 @@ const Footer = () => {
     return (
         <div>
             <footer className="footer h-[1200px] md:h-[600px] sm:footer-horizontal bg-base-300 text-base-content flex flex-col md:flex-row items-center justify-between p-10">
-                <nav className='space-y-8 text-2xl text-blue-600'>
+                <nav className='space-y-8 text-2xl text-blue-600' >
                     <h6 className="footer-title">Services</h6>
                     <a className="link link-hover">Branding</a>
                     <a className="link link-hover">Design</a>
                     <a className="link link-hover">Marketing</a>
                     <a className="link link-hover">Advertisement</a>
                 </nav>
-                <nav className='text-2xl space-y-8 text-blue-600'>
+                <nav className='text-2xl space-y-8 text-blue-600' >
                     <h6 className="footer-title">Menu</h6>
                     {
                         Links
                     }
 
                 </nav>
-                <nav className=' space-y-8'>
+                <nav className=' space-y-8' >
                     <h6 className="footer-title text-blue-600 text-2xl ">Social</h6>
                     <div className="grid grid-flow-col gap-4 text-blue-600">
                         <a href='https://x.com/'>

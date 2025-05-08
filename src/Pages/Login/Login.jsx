@@ -121,11 +121,11 @@ const Login = () => {
 
                         {wrongMessage && <p className='text-red-500 font-bold'>{wrongMessage}</p>}
 
-                        <button className="btn bg-blue-600 mt-4 w-full text-white">Login</button>
+                        <button className="btn text-blue-600 border-blue-600 rounded-3xl mt-4 w-full hover:bg-blue-600 hover:text-white">Login</button>
                     </form>
                     <p className='text-center text-blue-600 text-3xl pb-2'>Or</p>
                     <div>
-                        <button onClick={handlegoggle} className='btn text-blue-600 border-blue-600 rounded-3xl px-6 py-2 w-full hover:bg-blue-600 hover:text-white'>Sign In With Google</button>
+                        <button onClick={handlegoggle} className='btn text-blue-600 border-blue-600 hover:bg-blue-600 rounded-3xl px-6 py-2 w-full  hover:text-white'>Sign In With Google</button>
                     </div>
 
 

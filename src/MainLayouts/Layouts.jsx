@@ -12,7 +12,7 @@ const Layouts = () => {
                 <Navbar></Navbar>
 
             </header>
-            <main>
+            <main className=''>
                 <Outlet></Outlet>
 
             </main>

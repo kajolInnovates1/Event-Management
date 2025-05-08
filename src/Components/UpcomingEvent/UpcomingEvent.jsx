@@ -29,7 +29,7 @@ const UpcomingEvent = ({ data }) => {
 
     return (
         <div className='my-12'>
-            <h1 className=' text-2xl lg:text-5xl text-center font-bold text-blue-600 pb-8'>Upcoming Events</h1>
+            <h1 className=' text-2xl lg:text-5xl text-center font-bold text-blue-600 pb-8' data-aos='flip-left'>Upcoming Events</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                     upComing.map(single => <UpcomingSingle key={single.id} single={single}></UpcomingSingle>)
@@ -38,7 +38,7 @@ const UpcomingEvent = ({ data }) => {
 
             </div>
             <div className='flex justify-center'>
-                <button onClick={() => setShow(!showAll)} className="mt-4  bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition text-center">
+                <button onClick={() => setShow(!showAll)} className="mt-4  text-blue-600 hover:text-white border border-blue-600 px-4 py-2 rounded-xl hover:bg-blue-700 transition text-center">
                     {
                         showAll ? 'Hide' : 'View All'
                     }

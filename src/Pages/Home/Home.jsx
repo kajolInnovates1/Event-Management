@@ -23,7 +23,7 @@ const Home = () => {
             <div className="bg-base-300">
                 <Toaster></Toaster>
 
-                <div className="pt-24">
+                <div className="pt-48">
                     <Slider></Slider>
 
                 </div>
@@ -33,10 +33,10 @@ const Home = () => {
                     <UpcomingEvent data={data}></UpcomingEvent>
                 </div>
 
-                <div>
+                <div className="">
                     <Service></Service>
                 </div>
-                <div>
+                <div className="">
                     <Sponsor></Sponsor>
 
                 </div>

@@ -7,16 +7,16 @@ const Navbar = () => {
     const { user, logout } = use(AuthContext);
     console.log(user);
     const Links = <>
-        <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 hover:rounded-2xl hover:py-2 `} to='/'>Home</NavLink>
-        <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 hover:rounded-2xl hover:py-2 `} to='/Events'>Events</NavLink>
-        <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 hover:rounded-2xl hover:py-2 `} to='/category'>Category</NavLink>
+        <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 rounded-2xl hover:py-2 hover:text-white `} to='/' >Home</NavLink>
+        <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 rounded-2xl hover:py-2  hover:text-white`} to='/Events' >Events</NavLink>
+        <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 rounded-2xl hover:py-2 hover:text-white `} to='/category' >Category</NavLink>
         {
             user ? (
-                <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 hover:rounded-2xl hover:py-2 `} to='/myevents'>My Events</NavLink>
+                <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 rounded-2xl hover:py-2  hover:text-white`} to='/myevents'>My Events</NavLink>
             ) : ' '}
         {
             user ? ' ' : (
-                <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 hover:rounded-2xl hover:py-2 `} to='/register'>Registration</NavLink>)
+                <NavLink className={({ isActive }) => `${isActive ? 'bg-blue-600 px-4 py-1 text-white rounded-2xl' : ' '}hover:bg-blue-600 hover:px-8 hover:duration-1000 rounded-2xl hover:py-2 hover:text-white `} to='/register'>Registration</NavLink>)
         }
 
 
@@ -37,7 +37,7 @@ const Navbar = () => {
     }
     return (
 
-        <div className=' '>
+        <div className=''>
             <div className="navbar  shadow-sm px-8">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -46,14 +46,14 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow space-y-4" >
                             {
                                 Links
                             }
                         </ul>
                     </div>
 
-                    <a className="btn btn-ghost text-xl flex "><span className='text-2xl text-blue-600'>E</span><span>vents</span> </a>
+                    <a className="btn btn-ghost text-xl flex "><span className='text-5xl text-blue-600'>E</span><span className='text-2xl font-bold'>vents</span> </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-12 font-bold text-2xl">

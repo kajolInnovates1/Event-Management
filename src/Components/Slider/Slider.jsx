@@ -3,7 +3,7 @@ import React from 'react';
 const Slider = () => {
     return (
         <div className="min-h-[calc(100vh-540px)] px-8">
-            <div className="carousel w-full">
+            <div className="carousel w-full" data-aos='fade-down'>
                 <div id="slide1" className="carousel-item relative w-full">
                     <img
                         src="https://i.ibb.co.com/S74pk6Vn/img-1.jpg"
